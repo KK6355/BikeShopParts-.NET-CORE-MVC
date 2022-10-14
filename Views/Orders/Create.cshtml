@@ -23,20 +23,18 @@
                 <span asp-validation-for="ShippedDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CustomerId" class="control-label"></label>
-                <input asp-for="CustomerId" class="form-control" />
-                <span asp-validation-for="CustomerId" class="text-danger"></span>
+                <label asp-for="CustomerId" class="control-label">Customer</label>
+                <select asp-for="CustomerId" class="form-control form-select-sm form-select " asp-items="ViewBag.CustomerId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="StockId" class="control-label"></label>
-                <input asp-for="StockId" class="form-control" />
-                <span asp-validation-for="StockId" class="text-danger"></span>
+                <label asp-for="StockId" class="control-label">Stock</label>
+                <select asp-for="StockId" class="form-control form-select-sm form-select " asp-items="ViewBag.StockId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="StaffId" class="control-label"></label>
-                <input asp-for="StaffId" class="form-control" />
-                <span asp-validation-for="StaffId" class="text-danger"></span>
+                <label asp-for="StaffId" class="control-label">Staff</label>
+                <select asp-for="StaffId" class="form-control form-select-sm form-select " asp-items="ViewBag.StaffId"></select>
             </div>
+            <br>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

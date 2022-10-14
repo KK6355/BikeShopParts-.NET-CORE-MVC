@@ -14,8 +14,8 @@ public class Order
         public Guid StockId { get; set; }
         public Guid StaffId { get; set; }
 
-        Customer? Customer { get; set; }
-        Staff? Staff { get; set; }
-        Stock? Stock { get; set; }
+        public Customer? Customer { get; set; }
+        public Staff? Staff { get; set; }
+        public Stock? Stock { get; set; }
     }
 }

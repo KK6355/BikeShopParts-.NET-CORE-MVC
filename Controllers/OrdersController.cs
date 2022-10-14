@@ -22,7 +22,8 @@ namespace BikeShopPartsMVC.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Order.ToListAsync());
+            var applicationDbContext = _context.Order.Include(o => o.Customer).Include(o=>o.Stock).Include(o=>o.Staff);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Orders/Details/5
@@ -46,6 +47,12 @@ namespace BikeShopPartsMVC.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
+            var cutomerList = new SelectList(_context.Customer, "CustomerId", "Name");
+            ViewData["CustomerId"] = cutomerList;
+            var StockList = new SelectList(_context.Stock, "StockId", "ProductName");
+            ViewData["StockId"] = StockList;
+            var StaffList = new SelectList(_context.Staff, "StaffId", "Name");
+            ViewData["StaffId"] = StaffList;
             return View();
         }
 
@@ -79,6 +86,9 @@ namespace BikeShopPartsMVC.Controllers
             {
                 return NotFound();
             }
+            ViewData["CustomerId"] = new SelectList(_context.Customer, "CustomerId", "Name");
+            ViewData["StockId"] = new SelectList(_context.Stock, "StockId", "ProductName");
+            ViewData["StaffId"] = new SelectList(_context.Staff, "StaffId", "Name");
             return View(order);
         }
 

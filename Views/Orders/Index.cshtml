@@ -19,15 +19,15 @@
                 @Html.DisplayNameFor(model => model.ShippedDate)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CustomerId)
+                @Html.DisplayNameFor(model => model.Customer)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StockId)
+                @Html.DisplayNameFor(model => model.Stock)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.StaffId)
+                @Html.DisplayNameFor(model => model.Staff)
             </th>
-            <th></th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -40,13 +40,13 @@
                 @Html.DisplayFor(modelItem => item.ShippedDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CustomerId)
+                @Html.DisplayFor(modelItem => item.Customer.Name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StockId)
+                @Html.DisplayFor(modelItem => item.Stock.ProductName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.StaffId)
+                @Html.DisplayFor(modelItem => item.Staff.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
