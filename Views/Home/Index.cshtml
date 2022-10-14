@@ -19,7 +19,8 @@
             <div class="card-header">Customers</div>
             <div class="card-body">
                 <h4 class="card-title">Customer Summary</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">We have @ViewData["CustomerCount"] customers</p>
+                <p class="card-text">@ViewData["customersMadeOrder"] customers have made orders.</p>
             </div>
         </div>
     </div>
@@ -28,25 +29,35 @@
             <div class="card-header">Stock</div>
             <div class="card-body">
                 <h4 class="card-title">Stock Summary</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <p class="card-text">We have @ViewData["StockCount"] products</p>
+                <p class="card-text">Products are under @ViewData["productTypes"] product types</p>
             </div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="card text-white bg-warning mb-3">
-            <div class="card-header">Order Summary</div>
+            <div class="card-header">Orders</div>
             <div class="card-body">
-                <h4 class="card-title">Warning card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h4 class="card-title">Order Summary</h4>
+                <p class="card-text">We have @ViewData["OrderCount"] orders</p>
+                <p class="card-text">We have @ViewData["thisYearOrder"] orders in current year</p>
             </div>
         </div>
     </div>
     <div class="col-md-3">
         <div class="card text-white bg-info mb-3">
-            <div class="card-header">Staff Summary</div>
+            <div class="card-header">Staff</div>
             <div class="card-body">
-                <h4 class="card-title">Info card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h4 class="card-title">Staff Summary</h4>
+                <p class="card-text">We have @ViewData["StaffCount"] staff</p>
+                @*<p class="card-text">We have @ViewData["topSales"] staff</p>*@
+                @*<ul>
+            @foreach (var item in Model.ViewData["topSales"])
+            {
+                <li>  @item.Staff.Name </li>
+            }
+        </ul>*@
+
             </div>
         </div>
     </div>
