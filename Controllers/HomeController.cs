@@ -35,8 +35,7 @@ namespace BikeShopPartsMVC.Controllers
 
             var thisYearOrder = _context.Order.Where(o => o.OrderDate.Value.Year == DateTime.Now.Year).Count();
             ViewData["thisYearOrder"] = thisYearOrder;
-            //var topSales = _context.Order.GroupBy(o => o.Staff.Name).Take(1).ToString();
-            //ViewData["topSales"] = topSales;
+            
             return View();
         }
 
